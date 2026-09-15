@@ -70,7 +70,7 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
         {/* Title Header matching reference design */}
         <div className="flex flex-col sm:flex-row sm:items-baseline mb-8 gap-2 sm:gap-4">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B192C] tracking-tight">
-            Our Courses
+            Our Programs
           </h2>
           <p className="text-sm sm:text-base font-medium text-slate-500">
             From fundamentals to advanced concepts &mdash; learn what the industry demands.

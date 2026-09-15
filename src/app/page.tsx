@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CoursesSection from "@/components/CoursesSection";
 import WhoCanAttendSection from "@/components/WhoCanAttendSection";
+import CollegeGroupBanner from "@/components/CollegeGroupBanner";
 import DynamicPricingSection from "@/components/DynamicPricingSection";
 import WhyLearnWithUsSection from "@/components/WhyLearnWithUsSection";
 import StatsFooter from "@/components/StatsFooter";
@@ -49,7 +50,7 @@ export default function Home() {
           onExplorePrograms={handleExplorePrograms}
         />
 
-        {/* Our Courses */}
+        {/* Our Programs */}
         <CoursesSection
           onOpenEligibility={handleOpenAuth}
           onSelectCourse={handleSelectCourse}
@@ -59,6 +60,9 @@ export default function Home() {
         <WhoCanAttendSection
           onOpenEligibility={handleOpenAuth}
         />
+
+        {/* College Student Group Banner */}
+        <CollegeGroupBanner />
 
         {/* Dynamic Group Pricing Banner & How It Works */}
         <DynamicPricingSection

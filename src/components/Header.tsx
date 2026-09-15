@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Search, Menu, X, GraduationCap, ChevronRight } from "lucide-react";
+import { Search } from "lucide-react";
 
 interface HeaderProps {
   onOpenSearch: () => void;
@@ -10,12 +10,11 @@ interface HeaderProps {
 }
 
 export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Home");
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "Courses", href: "#courses" },
+    { name: "Programs", href: "#courses" },
     { name: "How It Works", href: "#how-it-works" },
     { name: "Why Us", href: "#why-us" },
     { name: "Contact", href: "#contact" },
@@ -73,13 +72,13 @@ export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
             })}
           </nav>
 
-          {/* Header Action Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Header Action Buttons - Visible on all screens */}
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Search Icon */}
             <button
               onClick={onOpenSearch}
-              className="p-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors"
-              title="Search Courses"
+              className="p-2 sm:p-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors"
+              title="Search Programs"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
@@ -88,71 +87,14 @@ export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
             {/* Join Now Button */}
             <button
               onClick={onOpenAuth}
-              className="px-5 py-2.5 text-sm font-bold text-white bg-[#00A86B] hover:bg-[#008f5a] rounded-lg shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
+              className="px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white bg-[#00A86B] hover:bg-[#008f5a] rounded-lg shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
             >
               Join Now
-            </button>
-          </div>
-
-          {/* Mobile Menu Toggle Button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              onClick={onOpenSearch}
-              className="p-2 text-slate-600 hover:text-slate-900 rounded-lg"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg"
-              aria-label="Toggle Menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
         </div>
       </div>
-
-      {/* Mobile Drawer Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-xl">
-          <nav className="flex flex-col space-y-1">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => {
-                  setActiveTab(item.name);
-                  setMobileMenuOpen(false);
-                }}
-                className={`flex items-center justify-between px-3 py-2.5 rounded-md text-base font-medium transition-colors ${
-                  activeTab === item.name
-                    ? "bg-emerald-50 text-[#00A86B]"
-                    : "text-slate-700 hover:bg-slate-50"
-                }`}
-              >
-                <span>{item.name}</span>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </a>
-            ))}
-          </nav>
-
-          <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAuth();
-              }}
-              className="w-full py-2.5 text-center text-sm font-bold text-white bg-[#00A86B] hover:bg-[#008f5a] rounded-lg shadow-sm"
-            >
-              Join Now
-            </button>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

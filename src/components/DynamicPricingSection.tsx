@@ -8,7 +8,7 @@ interface DynamicPricingSectionProps {
 }
 
 export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSectionProps) {
-  const [studentCount, setStudentCount] = useState(3);
+  const [studentCount, setStudentCount] = useState(14);
 
   // Dynamic price calculation formula based on batch cost (1 Lakh / min 3 to max 20 learners)
   const batchTotalCost = 100000;
