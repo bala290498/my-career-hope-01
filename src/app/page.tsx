@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import CoursesSection from "@/components/CoursesSection";
 import WhoCanAttendSection from "@/components/WhoCanAttendSection";
 import DynamicPricingSection from "@/components/DynamicPricingSection";
+import WhyLearnWithUsSection from "@/components/WhyLearnWithUsSection";
 import StatsFooter from "@/components/StatsFooter";
 import VideoModal from "@/components/VideoModal";
 import SearchModal from "@/components/SearchModal";
@@ -63,6 +64,9 @@ export default function Home() {
         <DynamicPricingSection
           onOpenAuth={handleOpenAuth}
         />
+
+        {/* Why Learn With Us Section */}
+        <WhyLearnWithUsSection />
       </main>
 
       {/* Navy Statistics Bar & Footer */}
