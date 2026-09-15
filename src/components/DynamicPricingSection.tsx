@@ -8,10 +8,11 @@ interface DynamicPricingSectionProps {
 }
 
 export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSectionProps) {
-  const [studentCount, setStudentCount] = useState(12);
+  const [studentCount, setStudentCount] = useState(3);
 
-  // Dynamic price calculation formula based on batch cost (1 Lakh / max 20 learners)
+  // Dynamic price calculation formula based on batch cost (1 Lakh / min 3 to max 20 learners)
   const batchTotalCost = 100000;
+  const minLearners = 3;
   const maxLearners = 20;
 
   // Calculated price per learner for the batch
@@ -23,7 +24,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
     Math.round(((baseIndividualPrice - currentPrice) / baseIndividualPrice) * 100)
   );
 
-  const learnerNumbers = Array.from({ length: 20 }, (_, i) => i + 1);
+  const learnerNumbers = Array.from({ length: maxLearners - minLearners + 1 }, (_, i) => i + minLearners);
 
   return (
     <section id="how-it-works" className="py-16 bg-white">
@@ -45,7 +46,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
               </h2>
 
               <p className="text-slate-300 text-base lg:text-lg leading-relaxed font-normal max-w-xl">
-                India&apos;s first platform with Dynamic Group Pricing. More learners join, everyone pays less automatically. Group cap: max 20 learners per batch.
+                India&apos;s first platform with Dynamic Group Pricing. More learners join, everyone pays less automatically. Group cap: 3 to 20 learners per batch.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -93,10 +94,10 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                   </span>
                 </div>
 
-                {/* Interactive 1 to 20 Point Indicators Slider Container */}
+                {/* Interactive 3 to 20 Point Indicators Slider Container */}
                 <div className="space-y-1 pt-2">
                   
-                  {/* Top Indicators Row: Odd Numbers (1, 3, 5, 7, 9, 11, 13, 15, 17, 19) */}
+                  {/* Top Indicators Row: Odd Numbers (3, 5, 7, 9, 11, 13, 15, 17, 19) */}
                   <div className="flex items-center justify-between px-1">
                     {learnerNumbers.map((num) => {
                       const isOdd = num % 2 !== 0;
@@ -112,7 +113,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                                   ? "bg-[#00A86B] text-white scale-125 shadow-md z-10 ring-2 ring-emerald-300"
                                   : "text-slate-400 hover:text-emerald-400 hover:scale-110"
                               }`}
-                              title={`Select ${num} Learner${num > 1 ? "s" : ""}`}
+                              title={`Select ${num} Learners`}
                             >
                               {num}
                             </button>
@@ -127,14 +128,14 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                   {/* Range Slider Input */}
                   <input
                     type="range"
-                    min="1"
+                    min="3"
                     max="20"
                     value={studentCount}
                     onChange={(e) => setStudentCount(Number(e.target.value))}
                     className="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#00A86B] my-1"
                   />
 
-                  {/* Bottom Indicators Row: Even Numbers (2, 4, 6, 8, 10, 12, 14, 16, 18, 20) */}
+                  {/* Bottom Indicators Row: Even Numbers (4, 6, 8, 10, 12, 14, 16, 18, 20) */}
                   <div className="flex items-center justify-between px-1">
                     {learnerNumbers.map((num) => {
                       const isEven = num % 2 === 0;
