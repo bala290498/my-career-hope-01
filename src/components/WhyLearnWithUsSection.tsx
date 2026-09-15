@@ -65,7 +65,7 @@ export default function WhyLearnWithUsSection() {
   ];
 
   return (
-    <section id="why-us" className="py-16 bg-slate-50 border-t border-slate-200/80">
+    <section id="why-us" className="scroll-mt-24 py-16 bg-slate-50 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

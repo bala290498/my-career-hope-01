@@ -44,7 +44,7 @@ export default function FeatureBar() {
   ];
 
   return (
-    <section id="why-us" className="py-8 bg-white border-y border-slate-200">
+    <section id="features" className="scroll-mt-24 py-8 bg-white border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
           {features.map((item, index) => {

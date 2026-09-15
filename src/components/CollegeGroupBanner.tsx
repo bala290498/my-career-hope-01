@@ -11,7 +11,7 @@ export default function CollegeGroupBanner() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-r from-[#0B192C] via-slate-900 to-[#00A86B]/95 text-white py-12 sm:py-16 relative overflow-hidden border-y border-slate-800/80 shadow-lg">
+    <section id="college-group" className="scroll-mt-24 w-full bg-gradient-to-r from-[#0B192C] via-slate-900 to-[#00A86B]/95 text-white py-12 sm:py-16 relative overflow-hidden border-y border-slate-800/80 shadow-lg">
       
       {/* Background Decorative Blur */}
       <div className="absolute top-0 right-0 -mt-16 -mr-16 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />

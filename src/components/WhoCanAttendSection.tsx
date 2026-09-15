@@ -36,7 +36,7 @@ export default function WhoCanAttendSection({ onOpenEligibility }: WhoCanAttendS
   ];
 
   return (
-    <section id="who-can-attend" className="py-16 bg-[#F0FDF4]/70 border-y border-emerald-100">
+    <section id="who-can-attend" className="scroll-mt-24 py-16 bg-[#F0FDF4]/70 border-y border-emerald-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header - Left Aligned */}

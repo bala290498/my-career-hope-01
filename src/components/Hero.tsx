@@ -19,7 +19,7 @@ export default function Hero({ onOpenVideo, onExplorePrograms }: HeroProps) {
   ];
 
   return (
-    <section id="home" className="relative w-full min-h-[580px] lg:min-h-[640px] flex items-center pt-12 pb-20 bg-slate-950 text-white overflow-hidden">
+    <section id="home" className="scroll-mt-24 relative w-full min-h-[580px] lg:min-h-[640px] flex items-center pt-12 pb-20 bg-slate-950 text-white overflow-hidden">
       
       {/* Full Hero Background Image */}
       <div className="absolute inset-0 z-0">

@@ -29,7 +29,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
   const fillPercentage = ((studentCount - minLearners) / (maxLearners - minLearners)) * 100;
 
   return (
-    <section id="how-it-works" className="py-16 bg-white">
+    <section id="how-it-works" className="scroll-mt-24 py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Full-Width Desktop Banner: Dynamic Group Pricing */}

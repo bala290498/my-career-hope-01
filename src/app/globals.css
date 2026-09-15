@@ -10,6 +10,11 @@
   --color-brand-mint: #F0FDF4;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
 @utility font-handwriting {
   font-family: var(--font-handwriting), "Caveat", cursive;
 }
