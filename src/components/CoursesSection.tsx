@@ -91,22 +91,22 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
             >
               {/* Slanting Ribbon Badge in Top-Right Corner */}
               {course.badge && (
-                <div className="absolute top-0 right-0 overflow-hidden w-28 h-28 pointer-events-none z-10">
-                  <div className="absolute transform rotate-45 bg-[#00A86B] text-white font-extrabold text-[8px] sm:text-[9px] uppercase tracking-wider text-center py-1 right-[-34px] top-[18px] w-[125px] shadow-sm border-b border-emerald-300">
-                    {course.badge}
+                <div className="absolute top-0 right-0 overflow-hidden w-32 h-32 pointer-events-none z-10">
+                  <div className="absolute transform rotate-45 bg-gradient-to-r from-emerald-600 via-[#00A86B] to-teal-600 text-white font-black text-[8.5px] sm:text-[9.5px] uppercase tracking-wider text-center py-1.5 right-[-38px] top-[22px] w-[140px] shadow-md border-b border-emerald-300/40 flex items-center justify-center">
+                    <span>{course.badge}</span>
                   </div>
                 </div>
               )}
 
               <div>
-                {/* Course Image Container */}
-                <div className="h-14 w-full flex items-center justify-start mb-3 pt-1">
-                  <div className="relative h-12 w-24 flex items-center justify-start">
+                {/* Course Image Container - Increased size */}
+                <div className="h-16 sm:h-20 w-full flex items-center justify-start mb-3 pt-1">
+                  <div className="relative h-14 sm:h-16 w-28 sm:w-36 flex items-center justify-start">
                     <Image
                       src={course.imageSrc}
                       alt={`${course.title} logo`}
                       fill
-                      className="object-contain object-left"
+                      className="object-contain object-left scale-105"
                     />
                   </div>
                 </div>
