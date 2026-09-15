@@ -25,7 +25,7 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
       category: "System Admin",
       desc: "Master the foundation of modern IT.",
       level: "Basic to Advanced",
-      imageSrc: "/courses/linux.jpeg",
+      imageSrc: "/courses/linux-removebg-preview.png",
     },
     {
       id: "aws",
@@ -33,7 +33,7 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
       category: "Cloud & DevOps",
       desc: "Build real cloud skills for real opportunities.",
       level: "Basic to Advanced",
-      imageSrc: "/courses/aws-logo-png-svg.webp",
+      imageSrc: "/courses/aws-logo-png-svg-removebg-preview.png",
     },
     {
       id: "python",
@@ -41,7 +41,7 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
       category: "Programming",
       desc: "Learn programming and automation.",
       level: "Basic to Advanced",
-      imageSrc: "/courses/python.png",
+      imageSrc: "/courses/images__4_-removebg-preview.png",
     },
   ];
 
