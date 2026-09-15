@@ -77,39 +77,9 @@ export default function WhoCanAttendSection({ onOpenEligibility }: WhoCanAttendS
                     {item.desc}
                   </p>
                 </div>
-
-                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#00A86B]">
-                  <CheckCircle2 className="w-4 h-4" />
-                  <span>100% Eligible</span>
-                </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Bottom CTA Banner */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-emerald-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-full bg-emerald-100 text-[#00A86B] flex items-center justify-center shrink-0">
-              <Sparkles className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="text-lg font-bold text-slate-900">
-                Not sure which course matches your profile?
-              </h4>
-              <p className="text-xs text-slate-500">
-                Take our 30-second eligibility assessment to get a personalized roadmap.
-              </p>
-            </div>
-          </div>
-
-          <button
-            onClick={onOpenEligibility}
-            className="shrink-0 px-6 py-3.5 bg-[#00A86B] hover:bg-[#008f5a] text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center gap-2"
-          >
-            <span>Check Your Eligibility</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
         </div>
 
       </div>

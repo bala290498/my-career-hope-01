@@ -16,12 +16,14 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
 
   // Calculated price per learner for the batch
   const currentPrice = Math.round(batchTotalCost / studentCount);
-  const baseIndividualPrice = 25000; // Base reference price for individual enrollment
+  const baseIndividualPrice = 50000; // Base strikethrough reference price for enrollment (₹50,000)
   
   const discountPercent = Math.min(
     95,
     Math.round(((baseIndividualPrice - currentPrice) / baseIndividualPrice) * 100)
   );
+
+  const learnerNumbers = Array.from({ length: 20 }, (_, i) => i + 1);
 
   return (
     <section id="how-it-works" className="py-16 bg-white">
@@ -91,21 +93,75 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                   </span>
                 </div>
 
-                {/* Slider Input - 1 to 20 max */}
-                <div className="space-y-2">
+                {/* Interactive 1 to 20 Point Indicators Slider Container */}
+                <div className="space-y-1 pt-2">
+                  
+                  {/* Top Indicators Row: Odd Numbers (1, 3, 5, 7, 9, 11, 13, 15, 17, 19) */}
+                  <div className="flex items-center justify-between px-1">
+                    {learnerNumbers.map((num) => {
+                      const isOdd = num % 2 !== 0;
+                      const isActive = studentCount === num;
+                      return (
+                        <div key={`odd-${num}`} className="w-5 flex justify-center">
+                          {isOdd ? (
+                            <button
+                              type="button"
+                              onClick={() => setStudentCount(num)}
+                              className={`text-[10px] font-extrabold transition-all px-1 py-0.5 rounded-md ${
+                                isActive
+                                  ? "bg-[#00A86B] text-white scale-125 shadow-md z-10 ring-2 ring-emerald-300"
+                                  : "text-slate-400 hover:text-emerald-400 hover:scale-110"
+                              }`}
+                              title={`Select ${num} Learner${num > 1 ? "s" : ""}`}
+                            >
+                              {num}
+                            </button>
+                          ) : (
+                            <span className="w-1 h-1 rounded-full bg-slate-700/60" />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Range Slider Input */}
                   <input
                     type="range"
                     min="1"
                     max="20"
                     value={studentCount}
                     onChange={(e) => setStudentCount(Number(e.target.value))}
-                    className="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#00A86B]"
+                    className="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#00A86B] my-1"
                   />
 
-                  <div className="flex justify-between text-xs text-slate-400 font-semibold pt-1">
-                    <span>1 Learner in batch</span>
-                    <span className="text-emerald-400">20 Learners (Max Discount: ₹5,000)</span>
+                  {/* Bottom Indicators Row: Even Numbers (2, 4, 6, 8, 10, 12, 14, 16, 18, 20) */}
+                  <div className="flex items-center justify-between px-1">
+                    {learnerNumbers.map((num) => {
+                      const isEven = num % 2 === 0;
+                      const isActive = studentCount === num;
+                      return (
+                        <div key={`even-${num}`} className="w-5 flex justify-center">
+                          {isEven ? (
+                            <button
+                              type="button"
+                              onClick={() => setStudentCount(num)}
+                              className={`text-[10px] font-extrabold transition-all px-1 py-0.5 rounded-md ${
+                                isActive
+                                  ? "bg-[#00A86B] text-white scale-125 shadow-md z-10 ring-2 ring-emerald-300"
+                                  : "text-slate-400 hover:text-emerald-400 hover:scale-110"
+                              }`}
+                              title={`Select ${num} Learners`}
+                            >
+                              {num}
+                            </button>
+                          ) : (
+                            <span className="w-1 h-1 rounded-full bg-slate-700/60" />
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
+
                 </div>
               </div>
             </div>
