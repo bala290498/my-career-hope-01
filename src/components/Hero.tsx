@@ -27,16 +27,16 @@ export default function Hero({ onOpenVideo, onExplorePrograms }: HeroProps) {
           src="/hero/hero.webp"
           alt="MyCareerHope Hero Background"
           fill
-          className="object-cover object-center opacity-85 sm:opacity-90 filter brightness-[0.95]"
+          className="object-cover object-center opacity-95 sm:opacity-100 filter brightness-[1.05]"
           priority
         />
-        {/* Subtle gradient overlay to ensure image is clearly visible while keeping text readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/40 to-slate-950/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-slate-950/20" />
+        {/* Reduced gradient overlay so hero image shines through brightly */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/50 via-slate-950/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
       </div>
 
-      {/* Top Right Corner Annotation: Real Projects, Real Experiences */}
-      <div className="absolute top-6 right-6 sm:top-8 sm:right-10 lg:top-8 lg:right-16 z-20 text-right pointer-events-none">
+      {/* Top Right Corner Annotation: Real Projects, Real Experiences (Desktop / Tablet only) */}
+      <div className="hidden sm:block absolute top-6 right-6 sm:top-8 sm:right-10 lg:top-8 lg:right-16 z-20 text-right pointer-events-none">
         <span className="font-handwriting text-3xl sm:text-4xl lg:text-5xl text-emerald-300 font-bold drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] block transform rotate-1">
           Real Projects,<br />Real Experiences
         </span>
