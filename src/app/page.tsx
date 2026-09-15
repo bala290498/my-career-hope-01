@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CoursesSection from "@/components/CoursesSection";
+import WhoCanAttendSection from "@/components/WhoCanAttendSection";
 import DynamicPricingSection from "@/components/DynamicPricingSection";
 import StatsFooter from "@/components/StatsFooter";
 import VideoModal from "@/components/VideoModal";
@@ -52,10 +53,15 @@ export default function Home() {
           onExplorePrograms={handleExplorePrograms}
         />
 
-        {/* Our Courses & Who Can Attend */}
+        {/* Our Courses */}
         <CoursesSection
           onOpenEligibility={() => setIsEligibilityModalOpen(true)}
           onSelectCourse={handleSelectCourse}
+        />
+
+        {/* Dedicated Who Can Attend Section */}
+        <WhoCanAttendSection
+          onOpenEligibility={() => setIsEligibilityModalOpen(true)}
         />
 
         {/* Dynamic Group Pricing Banner & How It Works */}

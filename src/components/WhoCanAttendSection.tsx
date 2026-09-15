@@ -1,0 +1,118 @@
+"use client";
+
+import React from "react";
+import { GraduationCap, Sparkles, RefreshCw, UserCheck, CheckCircle2, ArrowRight } from "lucide-react";
+
+interface WhoCanAttendSectionProps {
+  onOpenEligibility: () => void;
+}
+
+export default function WhoCanAttendSection({ onOpenEligibility }: WhoCanAttendSectionProps) {
+  const audienceList = [
+    {
+      title: "Final Year IT Students",
+      desc: "Prepare for campus placements and gain hands-on live project experience before graduating.",
+      icon: GraduationCap,
+      color: "text-emerald-600 bg-emerald-100/70 border-emerald-200",
+    },
+    {
+      title: "Freshers",
+      desc: "Bridge the gap between academic theory and industry-grade IT skills demanded by tech recruiters.",
+      icon: Sparkles,
+      color: "text-teal-600 bg-teal-100/70 border-teal-200",
+    },
+    {
+      title: "Candidates with a Career Gap",
+      desc: "Restart your career confidently with guided live sessions, projects, and interview mentorship.",
+      icon: RefreshCw,
+      color: "text-indigo-600 bg-indigo-100/70 border-indigo-200",
+    },
+    {
+      title: "Non-IT to IT Career Switchers",
+      desc: "Transition into high-demand IT roles step-by-step with zero prior coding prerequisites required.",
+      icon: UserCheck,
+      color: "text-sky-600 bg-sky-100/70 border-sky-200",
+    },
+  ];
+
+  return (
+    <section id="who-can-attend" className="py-16 bg-[#F0FDF4]/70 border-y border-emerald-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-xs font-bold text-emerald-800 uppercase tracking-wider">
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#00A86B]" />
+            <span>Target Audience</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B192C] tracking-tight">
+            Who Can Attend?
+          </h2>
+
+          <p className="text-base text-slate-600 font-normal leading-relaxed">
+            Our live training and dynamic group pricing programs are built specifically for learners from diverse backgrounds.
+          </p>
+        </div>
+
+        {/* 4 Audience Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          {audienceList.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl p-6 border border-emerald-200/60 shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+              >
+                <div>
+                  <div className={`w-14 h-14 rounded-2xl ${item.color} border flex items-center justify-center mb-5 group-hover:scale-105 transition-transform`}>
+                    <IconComponent className="w-7 h-7" />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-4 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-[#00A86B]">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>100% Eligible</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA Banner */}
+        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-emerald-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-emerald-100 text-[#00A86B] flex items-center justify-center shrink-0">
+              <Sparkles className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-lg font-bold text-slate-900">
+                Not sure which course matches your profile?
+              </h4>
+              <p className="text-xs text-slate-500">
+                Take our 30-second eligibility assessment to get a personalized roadmap.
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={onOpenEligibility}
+            className="shrink-0 px-6 py-3.5 bg-[#00A86B] hover:bg-[#008f5a] text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center gap-2"
+          >
+            <span>Check Your Eligibility</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+
+      </div>
+    </section>
+  );
+}
