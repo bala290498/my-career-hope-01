@@ -72,12 +72,12 @@ export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
             })}
           </nav>
 
-          {/* Header Action Buttons - Visible on all screens */}
+          {/* Header Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Search Icon */}
+            {/* Search Icon (Desktop/Tablet only) */}
             <button
               onClick={onOpenSearch}
-              className="p-2 sm:p-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors"
+              className="hidden sm:inline-flex p-2.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors"
               title="Search Programs"
               aria-label="Search"
             >
