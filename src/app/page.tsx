@@ -10,13 +10,11 @@ import StatsFooter from "@/components/StatsFooter";
 import VideoModal from "@/components/VideoModal";
 import SearchModal from "@/components/SearchModal";
 import AuthModal from "@/components/AuthModal";
-import EligibilityModal from "@/components/EligibilityModal";
 
 export default function Home() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [isEligibilityModalOpen, setIsEligibilityModalOpen] = useState(false);
   const [selectedCourseTitle, setSelectedCourseTitle] = useState<string | null>(null);
 
   const handleOpenAuth = () => {
@@ -52,13 +50,13 @@ export default function Home() {
 
         {/* Our Courses */}
         <CoursesSection
-          onOpenEligibility={() => setIsEligibilityModalOpen(true)}
+          onOpenEligibility={handleOpenAuth}
           onSelectCourse={handleSelectCourse}
         />
 
         {/* Dedicated Who Can Attend Section */}
         <WhoCanAttendSection
-          onOpenEligibility={() => setIsEligibilityModalOpen(true)}
+          onOpenEligibility={handleOpenAuth}
         />
 
         {/* Dynamic Group Pricing Banner & How It Works */}
@@ -84,13 +82,11 @@ export default function Home() {
 
       <AuthModal
         isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-      />
-
-      <EligibilityModal
-        isOpen={isEligibilityModalOpen}
-        onClose={() => setIsEligibilityModalOpen(false)}
-        onSelectCourse={handleSelectCourse}
+        selectedCourse={selectedCourseTitle}
+        onClose={() => {
+          setIsAuthModalOpen(false);
+          setSelectedCourseTitle(null);
+        }}
       />
     </div>
   );
