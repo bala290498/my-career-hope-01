@@ -141,7 +141,7 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
                     placeholder="Enter your full name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full pl-10 pr-3 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
+                    className="w-full pl-10 pr-3 py-2.5 text-base sm:text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
                   />
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full pl-10 pr-3 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
+                    className="w-full pl-10 pr-3 py-2.5 text-base sm:text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
                   />
                 </div>
               </div>
@@ -177,7 +177,7 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
                     placeholder="student@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full pl-10 pr-3 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
+                    className="w-full pl-10 pr-3 py-2.5 text-base sm:text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
                   />
                 </div>
               </div>
@@ -192,7 +192,7 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full pl-10 pr-8 py-2.5 text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20 font-medium text-slate-800"
+                    className="w-full pl-10 pr-8 py-2.5 text-base sm:text-sm rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20 font-medium text-slate-800"
                   >
                     {categories.map((cat) => (
                       <option key={cat} value={cat}>
@@ -216,7 +216,7 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
                     placeholder="e.g. DevOps, Linux, AWS, Python, BootCamp"
                     value={formData.course}
                     onChange={(e) => setFormData({ ...formData, course: e.target.value })}
-                    className="w-full pl-10 pr-3 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
+                    className="w-full pl-10 pr-3 py-2.5 text-base sm:text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
                   />
                 </div>
               </div>

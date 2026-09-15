@@ -47,7 +47,7 @@ export default function SearchModal({ isOpen, onClose, onSelectCourse }: SearchM
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoFocus
-            className="w-full bg-transparent text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none"
+            className="w-full bg-transparent text-base sm:text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none"
           />
           <button
             onClick={onClose}

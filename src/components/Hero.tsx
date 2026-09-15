@@ -79,7 +79,7 @@ export default function Hero({ onOpenVideo, onExplorePrograms }: HeroProps) {
 
               <button
                 onClick={onOpenVideo}
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 text-base font-bold text-white border-2 border-slate-600/80 hover:border-slate-400 bg-slate-900/60 hover:bg-slate-800/80 backdrop-blur-md rounded-xl transition-all shadow-md"
+                className="hidden sm:inline-flex items-center gap-2.5 px-7 py-3.5 text-base font-bold text-white border-2 border-slate-600/80 hover:border-slate-400 bg-slate-900/60 hover:bg-slate-800/80 backdrop-blur-md rounded-xl transition-all shadow-md"
               >
                 <div className="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
                   <Play className="w-4 h-4 fill-current ml-0.5" />
@@ -110,8 +110,8 @@ export default function Hero({ onOpenVideo, onExplorePrograms }: HeroProps) {
 
           </div>
 
-      {/* Bottom Right Corner Annotation: It's Possible! */}
-      <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-10 lg:bottom-8 lg:right-16 z-20 text-right pointer-events-none">
+      {/* Bottom Right Corner Annotation: It's Possible! (Desktop / Tablet only) */}
+      <div className="hidden sm:block absolute bottom-6 right-6 sm:bottom-8 sm:right-10 lg:bottom-8 lg:right-16 z-20 text-right pointer-events-none">
         <span className="font-handwriting text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] transform -rotate-3 block">
           It&apos;s Possible!
         </span>
