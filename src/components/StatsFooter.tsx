@@ -1,22 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import React from "react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function StatsFooter() {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [emailInput, setEmailInput] = useState("");
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (emailInput.trim()) {
-      setEmailSubmitted(true);
-      setEmailInput("");
-      setTimeout(() => setEmailSubmitted(false), 5000);
-    }
-  };
-
   return (
     <footer className="bg-[#0B192C] text-white pt-16 pb-12 overflow-hidden border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +14,7 @@ export default function StatsFooter() {
           {/* Left Text */}
           <div className="lg:col-span-5 space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
-              Built for Students Who Want Real Careers
+              Built for Students Who Want Real Experiences
             </h2>
             <p className="text-sm text-slate-300 leading-relaxed font-normal">
               We connect students and job seekers with working professionals who host live sessions. You learn together, pay less together, and move toward real job opportunities.
@@ -77,8 +64,8 @@ export default function StatsFooter() {
 
         </div>
 
-        {/* Middle Footer Navigation Links & Newsletter */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        {/* Middle Footer Navigation Links */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
@@ -142,42 +129,6 @@ export default function StatsFooter() {
               <li><a href="#about" className="hover:text-white transition-colors">Mentor Network</a></li>
               <li><a href="#contact" className="hover:text-white transition-colors">Contact Support</a></li>
             </ul>
-          </div>
-
-          {/* Newsletter Subscription */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-              Stay Updated
-            </h3>
-            <p className="text-xs text-slate-400">
-              Get weekly updates on new live batches and group discount deals.
-            </p>
-
-            <form onSubmit={handleSubscribe} className="space-y-2 pt-1">
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={emailInput}
-                  onChange={(e) => setEmailInput(e.target.value)}
-                  required
-                  className="w-full px-3.5 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#00A86B]"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-1 top-1 bottom-1 px-3 bg-[#00A86B] hover:bg-[#008f5a] text-white rounded-md flex items-center justify-center transition-colors"
-                >
-                  <Send className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-              {emailSubmitted && (
-                <div className="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold animate-in fade-in">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>Subscribed successfully!</span>
-                </div>
-              )}
-            </form>
           </div>
 
         </div>
