@@ -35,7 +35,7 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
     e.preventDefault();
     
     const textMessage = 
-      `Hi MyCareerHope! I am interested in joining a batch.\n\n` +
+      `Hi MyCareerHope Team! I am interested in joining a batch.\n\n` +
       `*Name:* ${formData.name}\n` +
       `*Mobile/WhatsApp:* ${formData.phone}\n` +
       `*Email:* ${formData.email}\n` +

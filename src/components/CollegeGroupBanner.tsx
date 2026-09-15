@@ -5,7 +5,7 @@ import { MessageCircle, Users, ArrowRight } from "lucide-react";
 
 export default function CollegeGroupBanner() {
   const handleWhatsAppRequest = () => {
-    const msg = "Hi MyCareerHope! I am a college student and would like to request a group discount batch for me and my friends.";
+    const msg = "Hi MyCareerHope Team! I am a college student and would like to request a group discount batch for me and my friends.";
     const url = `https://api.whatsapp.com/send?phone=919677691237&text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank");
   };
