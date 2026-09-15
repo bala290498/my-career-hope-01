@@ -95,7 +95,7 @@ export default function StatsFooter() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#00A86B]" />
-                <span>+91 7010 584543</span>
+                <span>+91 96776 91237</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-[#00A86B]" />
