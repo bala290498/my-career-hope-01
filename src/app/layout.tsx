@@ -24,13 +24,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MyCareerHope - Learn Today. Build Experience. Launch Your Career.",
     description: "Live IT training from industry professionals, real-world projects, career mentorship, and India's first platform with Dynamic Group Pricing.",
+    url: "https://mycareerhope.com",
     siteName: "MyCareerHope",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
+        secureUrl: "https://mycareerhope.com/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "MyCareerHope - Learn Today. Build Experience. Launch Your Career.",
+        type: "image/jpeg",
+      },
+      {
+        url: "/og-image.png",
+        secureUrl: "https://mycareerhope.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MyCareerHope - Learn Today. Build Experience. Launch Your Career.",
+        type: "image/png",
       },
     ],
     locale: "en_US",
@@ -40,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MyCareerHope - Learn Today. Build Experience. Launch Your Career.",
     description: "Live IT training from industry professionals, real-world projects, career mentorship, and India's first platform with Dynamic Group Pricing.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
