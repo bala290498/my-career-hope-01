@@ -172,9 +172,9 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
           <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
         </div>
 
-        {/* Next Section: Full-Width How It Works Cards */}
-        <div className="w-full bg-slate-50/70 border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-sm space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-6">
+        {/* Standalone How It Works Section */}
+        <div className="w-full space-y-8 pt-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
             <div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0B192C]">
                 How It Works
@@ -183,7 +183,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                 Simple, transparent 3-step process to get maximum course fee discounts.
               </p>
             </div>
-            <span className="text-xs font-bold text-[#00A86B] bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200">
+            <span className="text-xs font-bold text-[#00A86B] bg-emerald-50 px-3.5 py-1.5 rounded-xl border border-emerald-200 w-fit">
               100% Risk-Free Guarantee
             </span>
           </div>

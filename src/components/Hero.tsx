@@ -102,7 +102,7 @@ export default function Hero({ onOpenVideo, onExplorePrograms }: HeroProps) {
               </div>
               <div>
                 <p className="text-sm text-slate-200 font-medium">
-                  Join <span className="font-extrabold text-white">5,000+</span> learners
+                  Join <span className="font-extrabold text-white">500+</span> learners
                 </p>
                 <p className="text-xs text-slate-400">building their careers with us.</p>
               </div>

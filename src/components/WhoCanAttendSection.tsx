@@ -39,13 +39,8 @@ export default function WhoCanAttendSection({ onOpenEligibility }: WhoCanAttendS
     <section id="who-can-attend" className="py-16 bg-[#F0FDF4]/70 border-y border-emerald-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-200 text-xs font-bold text-emerald-800 uppercase tracking-wider">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#00A86B]" />
-            <span>Target Audience</span>
-          </div>
-
+        {/* Section Header - Left Aligned */}
+        <div className="text-left max-w-3xl mb-10 space-y-3">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B192C] tracking-tight">
             Who Can Attend?
           </h2>
@@ -55,25 +50,25 @@ export default function WhoCanAttendSection({ onOpenEligibility }: WhoCanAttendS
           </p>
         </div>
 
-        {/* 4 Audience Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        {/* 4 Audience Cards Grid - 2 columns on mobile, 4 columns on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10">
           {audienceList.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-6 border border-emerald-200/60 shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                className="bg-white rounded-2xl p-4 sm:p-6 border border-emerald-200/60 shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
               >
                 <div>
-                  <div className={`w-14 h-14 rounded-2xl ${item.color} border flex items-center justify-center mb-5 group-hover:scale-105 transition-transform`}>
-                    <IconComponent className="w-7 h-7" />
+                  <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-2xl ${item.color} border flex items-center justify-center mb-3 sm:mb-5 group-hover:scale-105 transition-transform`}>
+                    <IconComponent className="w-5 h-5 sm:w-7 sm:h-7" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="text-base sm:text-xl font-bold text-slate-900 mb-1.5 sm:mb-2 leading-snug">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>

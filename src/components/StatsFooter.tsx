@@ -14,26 +14,27 @@ export default function StatsFooter() {
           {/* Left Text */}
           <div className="lg:col-span-5 space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
-              Built for Students Who Want Real Experiences
+              Built for Students<br />
+              Who Want Real Experiences
             </h2>
             <p className="text-sm text-slate-300 leading-relaxed font-normal">
               We connect students and job seekers with working professionals who host live sessions. You learn together, pay less together, and move toward real job opportunities.
             </p>
           </div>
 
-          {/* Right Stats Metrics Bar (4 cols divided cleanly) */}
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+          {/* Right Stats Metrics Bar (2 cols on mobile, 4 cols on desktop, no divide lines) */}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center sm:text-left">
             
-            <div className="text-center sm:text-left sm:pl-4">
+            <div>
               <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight block">
-                5,000+
+                500+
               </span>
               <span className="text-xs font-semibold text-slate-400 mt-1 block">
                 Learners
               </span>
             </div>
 
-            <div className="text-center sm:text-left pt-4 sm:pt-0 sm:pl-6">
+            <div>
               <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight block">
                 200+
               </span>
@@ -42,8 +43,8 @@ export default function StatsFooter() {
               </span>
             </div>
 
-            <div className="text-center sm:text-left pt-4 sm:pt-0 sm:pl-6">
-              <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight block">
+            <div>
+              <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight block">
                 50+
               </span>
               <span className="text-xs font-semibold text-slate-400 mt-1 block">
@@ -51,8 +52,8 @@ export default function StatsFooter() {
               </span>
             </div>
 
-            <div className="text-center sm:text-left pt-4 sm:pt-0 sm:pl-6">
-              <span className="text-3xl sm:text-4xl font-extrabold text-[#00A86B] tracking-tight block">
+            <div>
+              <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight block">
                 90%
               </span>
               <span className="text-xs font-semibold text-slate-400 mt-1 block">
