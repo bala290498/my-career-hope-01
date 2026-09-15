@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { ArrowRight, Users, Tag, Sparkles, TrendingDown, CheckCircle2 } from "lucide-react";
 
 interface DynamicPricingSectionProps {
-  onOpenAuth: (mode: "signup") => void;
+  onOpenAuth: () => void;
 }
 
 export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSectionProps) {
@@ -50,7 +50,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
-                  onClick={() => onOpenAuth("signup")}
+                  onClick={onOpenAuth}
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-slate-900 hover:bg-slate-100 rounded-xl font-bold text-sm transition-all shadow-md active:scale-98"
                 >
                   <span>See How It Works</span>

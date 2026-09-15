@@ -5,19 +5,16 @@ import { X, CheckCircle2, Lock, Mail, User, Phone, ArrowRight } from "lucide-rea
 
 interface AuthModalProps {
   isOpen: boolean;
-  initialMode: "login" | "signup";
   onClose: () => void;
 }
 
-export default function AuthModal({ isOpen, initialMode, onClose }: AuthModalProps) {
-  const [mode, setMode] = useState<"login" | "signup">(initialMode);
+export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
   const [submitted, setSubmitted] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    password: "",
   });
 
   if (!isOpen) return null;
@@ -37,31 +34,15 @@ export default function AuthModal({ isOpen, initialMode, onClose }: AuthModalPro
         className="w-full max-w-md bg-white rounded-3xl border border-slate-200 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Top Header Tabs */}
-        <div className="flex border-b border-slate-200 bg-slate-50">
-          <button
-            onClick={() => { setMode("login"); setSubmitted(false); }}
-            className={`flex-1 py-4 text-sm font-bold transition-all border-b-2 ${
-              mode === "login"
-                ? "border-[#00A86B] text-[#00A86B] bg-white"
-                : "border-transparent text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            Login to Account
-          </button>
-          <button
-            onClick={() => { setMode("signup"); setSubmitted(false); }}
-            className={`flex-1 py-4 text-sm font-bold transition-all border-b-2 ${
-              mode === "signup"
-                ? "border-[#00A86B] text-[#00A86B] bg-white"
-                : "border-transparent text-slate-500 hover:text-slate-800"
-            }`}
-          >
-            Join Now (Sign Up)
-          </button>
+        {/* Top Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+          <div>
+            <h3 className="text-lg font-bold text-slate-900">Join Now</h3>
+            <p className="text-xs text-slate-500 font-normal">Reserve your spot &amp; unlock dynamic group pricing</p>
+          </div>
           <button
             onClick={onClose}
-            className="p-3 text-slate-400 hover:text-slate-700"
+            className="p-2 text-slate-400 hover:text-slate-700 rounded-lg"
           >
             <X className="w-5 h-5" />
           </button>
@@ -75,34 +56,30 @@ export default function AuthModal({ isOpen, initialMode, onClose }: AuthModalPro
                 <CheckCircle2 className="w-10 h-10 stroke-[2.5]" />
               </div>
               <h3 className="text-xl font-bold text-slate-900">
-                {mode === "login" ? "Welcome Back!" : "Registration Successful!"}
+                Registration Successful!
               </h3>
               <p className="text-xs text-slate-500">
-                {mode === "login"
-                  ? "Redirecting to your learner dashboard..."
-                  : "You've successfully reserved your dynamic group pricing spot!"}
+                You&apos;ve successfully reserved your dynamic group pricing spot!
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
-              {mode === "signup" && (
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Full Name
-                  </label>
-                  <div className="relative">
-                    <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                    <input
-                      type="text"
-                      required
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#00A86B]"
-                    />
-                  </div>
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  Full Name
+                </label>
+                <div className="relative">
+                  <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <input
+                    type="text"
+                    required
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full pl-9 pr-3 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#00A86B]"
+                  />
                 </div>
-              )}
+              </div>
 
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
@@ -121,37 +98,18 @@ export default function AuthModal({ isOpen, initialMode, onClose }: AuthModalPro
                 </div>
               </div>
 
-              {mode === "signup" && (
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Phone Number
-                  </label>
-                  <div className="relative">
-                    <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+91 98765 43210"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#00A86B]"
-                    />
-                  </div>
-                </div>
-              )}
-
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Password
+                  Phone Number
                 </label>
                 <div className="relative">
-                  <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                  <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                   <input
-                    type="password"
+                    type="tel"
                     required
-                    placeholder="••••••••"
-                    value={formData.password}
-                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    placeholder="+91 98765 43210"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full pl-9 pr-3 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#00A86B]"
                   />
                 </div>
@@ -161,17 +119,9 @@ export default function AuthModal({ isOpen, initialMode, onClose }: AuthModalPro
                 type="submit"
                 className="w-full py-3 text-sm font-bold text-white bg-[#00A86B] hover:bg-[#008f5a] rounded-xl shadow-md transition-all flex items-center justify-center gap-2 mt-2"
               >
-                <span>{mode === "login" ? "Sign In" : "Join Now & Get Discount"}</span>
+                <span>Join Now &amp; Get Discount</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
-
-              <div className="pt-2 text-center text-xs text-slate-500">
-                {mode === "login" ? (
-                  <span>Don&apos;t have an account? <button type="button" onClick={() => setMode("signup")} className="text-[#00A86B] font-bold underline">Join Now</button></span>
-                ) : (
-                  <span>Already registered? <button type="button" onClick={() => setMode("login")} className="text-[#00A86B] font-bold underline">Login</button></span>
-                )}
-              </div>
             </form>
           )}
         </div>

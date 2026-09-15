@@ -16,19 +16,16 @@ export default function Home() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [authMode, setAuthMode] = useState<"login" | "signup">("signup");
   const [isEligibilityModalOpen, setIsEligibilityModalOpen] = useState(false);
   const [selectedCourseTitle, setSelectedCourseTitle] = useState<string | null>(null);
 
-  const handleOpenAuth = (mode: "login" | "signup") => {
-    setAuthMode(mode);
+  const handleOpenAuth = () => {
     setIsAuthModalOpen(true);
   };
 
   const handleSelectCourse = (title: string) => {
     setSelectedCourseTitle(title);
     setIsAuthModalOpen(true);
-    setAuthMode("signup");
   };
 
   const handleExplorePrograms = () => {
@@ -87,7 +84,6 @@ export default function Home() {
 
       <AuthModal
         isOpen={isAuthModalOpen}
-        initialMode={authMode}
         onClose={() => setIsAuthModalOpen(false)}
       />
 

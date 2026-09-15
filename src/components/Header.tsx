@@ -6,7 +6,7 @@ import { Search, Menu, X, GraduationCap, ChevronRight } from "lucide-react";
 
 interface HeaderProps {
   onOpenSearch: () => void;
-  onOpenAuth: (mode: "login" | "signup") => void;
+  onOpenAuth: () => void;
 }
 
 export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
@@ -87,17 +87,9 @@ export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
               <Search className="w-5 h-5" />
             </button>
 
-            {/* Login Button */}
-            <button
-              onClick={() => onOpenAuth("login")}
-              className="px-5 py-2.5 text-sm font-semibold text-slate-800 border border-slate-300 rounded-lg hover:border-slate-400 hover:bg-slate-50 transition-all shadow-2xs"
-            >
-              Login
-            </button>
-
             {/* Join Now Button */}
             <button
-              onClick={() => onOpenAuth("signup")}
+              onClick={onOpenAuth}
               className="px-5 py-2.5 text-sm font-bold text-white bg-[#00A86B] hover:bg-[#008f5a] rounded-lg shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
             >
               Join Now
@@ -154,16 +146,7 @@ export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenAuth("login");
-              }}
-              className="w-full py-2.5 text-center text-sm font-semibold text-slate-800 border border-slate-300 rounded-lg hover:bg-slate-50"
-            >
-              Login
-            </button>
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenAuth("signup");
+                onOpenAuth();
               }}
               className="w-full py-2.5 text-center text-sm font-bold text-white bg-[#00A86B] hover:bg-[#008f5a] rounded-lg shadow-sm"
             >
