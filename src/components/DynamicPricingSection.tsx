@@ -10,16 +10,19 @@ interface DynamicPricingSectionProps {
 export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSectionProps) {
   const [studentCount, setStudentCount] = useState(12);
 
-  // Dynamic price calculation formula (Max 20 learners)
-  const basePrice = 12000;
-  const minPrice = 2999;
+  // Dynamic price calculation formula based on batch cost (1 Lakh / max 20 learners)
+  // 1 Lakh (100,000) is used internally for calculation as requested (not displayed directly)
+  const batchTotalCost = 100000;
   const maxLearners = 20;
 
-  const currentPrice = Math.max(
-    minPrice,
-    Math.round(basePrice - (studentCount - 1) * ((basePrice - minPrice) / (maxLearners - 1)))
+  // Calculated price per learner for the batch
+  const currentPrice = Math.round(batchTotalCost / studentCount);
+  const baseIndividualPrice = 25000; // Base reference price for individual enrollment
+  
+  const discountPercent = Math.min(
+    95,
+    Math.round(((baseIndividualPrice - currentPrice) / baseIndividualPrice) * 100)
   );
-  const discountPercent = Math.round(((basePrice - currentPrice) / basePrice) * 100);
 
   return (
     <section id="how-it-works" className="py-16 bg-white">
@@ -41,7 +44,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
               </h2>
 
               <p className="text-slate-300 text-base leading-relaxed font-normal">
-                India&apos;s first platform with Dynamic Group Pricing. More learners. Lower prices. (Group cap: max 20 learners).
+                India&apos;s first platform with Dynamic Group Pricing. More learners join, everyone pays less. (Max 20 learners per batch).
               </p>
 
               {/* Interactive Pricing Simulator Widget */}
@@ -52,7 +55,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center gap-1">
                     <TrendingDown className="w-3 h-3" />
-                    {discountPercent}% OFF
+                    {discountPercent > 0 ? `${discountPercent}% OFF` : "Group Price"}
                   </span>
                 </div>
 
@@ -61,16 +64,19 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                     <span className="text-3xl font-extrabold text-white">
                       ₹{currentPrice.toLocaleString()}
                     </span>
-                    <span className="text-sm text-slate-400 line-through ml-2">
-                      ₹{basePrice.toLocaleString()}
-                    </span>
+                    <span className="text-xs text-slate-400 ml-1">/ learner</span>
+                    {currentPrice < baseIndividualPrice && (
+                      <span className="text-sm text-slate-400 line-through ml-2">
+                        ₹{baseIndividualPrice.toLocaleString()}
+                      </span>
+                    )}
                   </div>
                   <span className="text-xs font-bold text-emerald-400">
                     {studentCount} / {maxLearners} Learners Joined
                   </span>
                 </div>
 
-                {/* Slider - Max 20 */}
+                {/* Slider - 1 to 20 learners max */}
                 <input
                   type="range"
                   min="1"
@@ -81,8 +87,8 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                 />
 
                 <div className="flex justify-between text-[11px] text-slate-400 font-medium">
-                  <span>1 Learner: ₹12,000</span>
-                  <span>20 Learners: ₹2,999 (Max Discount)</span>
+                  <span>1 Learner in batch</span>
+                  <span>20 Learners (Max Discount: ₹5,000)</span>
                 </div>
               </div>
             </div>
@@ -161,7 +167,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
 
             {/* Bottom Note */}
             <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
-              <span>Automated discount calculation (Max 20 learners per group)</span>
+              <span>Automated calculation (Max 20 learners per batch)</span>
               <span className="text-[#00A86B] font-bold">100% Risk-Free Refund Guarantee</span>
             </div>
           </div>
