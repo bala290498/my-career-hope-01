@@ -1,21 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, UserGroup, Users, Tag, Sparkles, TrendingDown } from "lucide-react";
+import { ArrowRight, Users, Tag, Sparkles, TrendingDown } from "lucide-react";
 
 interface DynamicPricingSectionProps {
   onOpenAuth: (mode: "signup") => void;
 }
 
 export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSectionProps) {
-  const [studentCount, setStudentCount] = useState(42);
+  const [studentCount, setStudentCount] = useState(12);
 
-  // Dynamic price calculation formula
+  // Dynamic price calculation formula (Max 20 learners)
   const basePrice = 12000;
   const minPrice = 2999;
+  const maxLearners = 20;
+
   const currentPrice = Math.max(
     minPrice,
-    Math.round(basePrice - (studentCount - 1) * 90)
+    Math.round(basePrice - (studentCount - 1) * ((basePrice - minPrice) / (maxLearners - 1)))
   );
   const discountPercent = Math.round(((basePrice - currentPrice) / basePrice) * 100);
 
@@ -39,7 +41,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
               </h2>
 
               <p className="text-slate-300 text-base leading-relaxed font-normal">
-                India&apos;s first platform with Dynamic Group Pricing. More learners. Lower prices.
+                India&apos;s first platform with Dynamic Group Pricing. More learners. Lower prices. (Group cap: max 20 learners).
               </p>
 
               {/* Interactive Pricing Simulator Widget */}
@@ -64,15 +66,15 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                     </span>
                   </div>
                   <span className="text-xs font-bold text-emerald-400">
-                    {studentCount} Learners Joined
+                    {studentCount} / {maxLearners} Learners Joined
                   </span>
                 </div>
 
-                {/* Slider */}
+                {/* Slider - Max 20 */}
                 <input
                   type="range"
                   min="1"
-                  max="100"
+                  max="20"
                   value={studentCount}
                   onChange={(e) => setStudentCount(Number(e.target.value))}
                   className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#00A86B]"
@@ -80,7 +82,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
 
                 <div className="flex justify-between text-[11px] text-slate-400 font-medium">
                   <span>1 Learner: ₹12,000</span>
-                  <span>100 Learners: ₹2,999</span>
+                  <span>20 Learners: ₹2,999 (Max Discount)</span>
                 </div>
               </div>
             </div>
@@ -135,7 +137,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                     </div>
                   </div>
                   <p className="text-sm font-semibold text-slate-800 leading-snug">
-                    More students join.<br />The group grows.
+                    More students join.<br />The group grows (up to 20).
                   </p>
                 </div>
 
@@ -159,7 +161,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
 
             {/* Bottom Note */}
             <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-medium">
-              <span>Transparent &amp; automated group discount calculation</span>
+              <span>Automated discount calculation (Max 20 learners per group)</span>
               <span className="text-[#00A86B] font-bold">100% Risk-Free Refund Guarantee</span>
             </div>
           </div>
