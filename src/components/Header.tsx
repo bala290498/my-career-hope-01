@@ -44,8 +44,8 @@ export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
             </div>
             <div className="flex flex-col">
               <div className="flex items-center">
-                <span className="text-xl font-extrabold text-slate-900 tracking-tight">MyCareer</span>
-                <span className="text-xl font-extrabold text-[#00A86B] tracking-tight">Hope</span>
+                <span className="text-xl font-extrabold text-slate-900 tracking-tight">mycareer</span>
+                <span className="text-xl font-extrabold text-[#00A86B] tracking-tight">hope</span>
               </div>
               <span className="text-[10px] font-bold tracking-widest text-slate-500 uppercase -mt-0.5">
                 LEARN &bull; BUILD &bull; LAUNCH

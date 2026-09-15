@@ -88,7 +88,7 @@ export default function StatsFooter() {
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-extrabold text-white tracking-tight">
-                  MyCareer<span className="text-[#00A86B]">Hope</span>
+                  mycareer<span className="text-[#00A86B]">hope</span>
                 </span>
                 <span className="text-[9px] font-bold tracking-widest text-slate-400 uppercase">
                   LEARN &bull; BUILD &bull; LAUNCH
