@@ -26,6 +26,8 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
 
   const learnerNumbers = Array.from({ length: maxLearners - minLearners + 1 }, (_, i) => i + minLearners);
 
+  const fillPercentage = ((studentCount - minLearners) / (maxLearners - minLearners)) * 100;
+
   return (
     <section id="how-it-works" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -94,14 +96,15 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                   </span>
                 </div>
 
-                {/* Interactive 3 to 20 Point Indicators Slider Container */}
-                <div className="space-y-1 pt-2">
+                {/* Interactive 3 to 20 Point Indicators Slider Container with Track Fill */}
+                <div className="space-y-1.5 pt-2">
                   
                   {/* Top Indicators Row: Odd Numbers (3, 5, 7, 9, 11, 13, 15, 17, 19) */}
                   <div className="flex items-center justify-between px-1">
                     {learnerNumbers.map((num) => {
                       const isOdd = num % 2 !== 0;
                       const isActive = studentCount === num;
+                      const isReached = num <= studentCount;
                       return (
                         <div key={`odd-${num}`} className="w-5 flex justify-center">
                           {isOdd ? (
@@ -111,6 +114,8 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                               className={`text-[10px] font-extrabold transition-all px-1 py-0.5 rounded-md ${
                                 isActive
                                   ? "bg-[#00A86B] text-white scale-125 shadow-md z-10 ring-2 ring-emerald-300"
+                                  : isReached
+                                  ? "text-emerald-400 font-bold hover:scale-110"
                                   : "text-slate-400 hover:text-emerald-400 hover:scale-110"
                               }`}
                               title={`Select ${num} Learners`}
@@ -118,28 +123,34 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                               {num}
                             </button>
                           ) : (
-                            <span className="w-1 h-1 rounded-full bg-slate-700/60" />
+                            <span className={`w-1.5 h-1.5 rounded-full transition-colors ${isReached ? "bg-[#00A86B]" : "bg-slate-700/80"}`} />
                           )}
                         </div>
                       );
                     })}
                   </div>
 
-                  {/* Range Slider Input */}
-                  <input
-                    type="range"
-                    min="3"
-                    max="20"
-                    value={studentCount}
-                    onChange={(e) => setStudentCount(Number(e.target.value))}
-                    className="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#00A86B] my-1"
-                  />
+                  {/* Range Slider Input with Dynamic Green Track Fill */}
+                  <div className="relative w-full h-3 my-1 flex items-center">
+                    <input
+                      type="range"
+                      min={minLearners}
+                      max={maxLearners}
+                      value={studentCount}
+                      onChange={(e) => setStudentCount(Number(e.target.value))}
+                      style={{
+                        background: `linear-gradient(to right, #00A86B 0%, #00A86B ${fillPercentage}%, #334155 ${fillPercentage}%, #334155 100%)`,
+                      }}
+                      className="w-full h-3 rounded-lg appearance-none cursor-pointer accent-[#00A86B] focus:outline-none"
+                    />
+                  </div>
 
                   {/* Bottom Indicators Row: Even Numbers (4, 6, 8, 10, 12, 14, 16, 18, 20) */}
                   <div className="flex items-center justify-between px-1">
                     {learnerNumbers.map((num) => {
                       const isEven = num % 2 === 0;
                       const isActive = studentCount === num;
+                      const isReached = num <= studentCount;
                       return (
                         <div key={`even-${num}`} className="w-5 flex justify-center">
                           {isEven ? (
@@ -149,6 +160,8 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                               className={`text-[10px] font-extrabold transition-all px-1 py-0.5 rounded-md ${
                                 isActive
                                   ? "bg-[#00A86B] text-white scale-125 shadow-md z-10 ring-2 ring-emerald-300"
+                                  : isReached
+                                  ? "text-emerald-400 font-bold hover:scale-110"
                                   : "text-slate-400 hover:text-emerald-400 hover:scale-110"
                               }`}
                               title={`Select ${num} Learners`}
@@ -156,7 +169,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                               {num}
                             </button>
                           ) : (
-                            <span className="w-1 h-1 rounded-full bg-slate-700/60" />
+                            <span className={`w-1.5 h-1.5 rounded-full transition-colors ${isReached ? "bg-[#00A86B]" : "bg-slate-700/80"}`} />
                           )}
                         </div>
                       );
