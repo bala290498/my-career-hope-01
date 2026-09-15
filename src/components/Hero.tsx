@@ -73,7 +73,7 @@ export default function Hero({ onOpenVideo, onExplorePrograms }: HeroProps) {
                 onClick={onExplorePrograms}
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-base font-bold text-white bg-[#00A86B] hover:bg-[#008f5a] rounded-xl shadow-lg hover:shadow-emerald-900/30 transition-all transform active:scale-98"
               >
-                <span>Explore Programs</span>
+                <span>Explore Courses</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
 

@@ -107,7 +107,7 @@ export default function StatsFooter() {
           {/* Quick Links */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-white uppercase tracking-wider">
-              Popular Programs
+              Popular Courses
             </h3>
             <ul className="space-y-2 text-xs text-slate-400 font-medium">
               <li><a href="#courses" className="hover:text-white transition-colors">DevOps Masterclass</a></li>

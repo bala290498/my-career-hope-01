@@ -16,7 +16,6 @@ export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "Courses", href: "#courses" },
-    { name: "Programs", href: "#programs" },
     { name: "How It Works", href: "#how-it-works" },
     { name: "Why Us", href: "#why-us" },
     { name: "About", href: "#about" },
