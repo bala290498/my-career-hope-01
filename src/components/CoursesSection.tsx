@@ -83,19 +83,18 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
             <div
               key={course.id}
               onClick={() => onSelectCourse(course.title)}
-              className={`bg-white rounded-2xl p-4 sm:p-5 border transition-all duration-300 flex flex-col justify-between group cursor-pointer h-full relative ${
+              className={`bg-white rounded-2xl p-4 sm:p-5 border transition-all duration-300 flex flex-col justify-between group cursor-pointer h-full relative overflow-hidden ${
                 course.badge
-                  ? "border-[#00A86B] shadow-md ring-2 ring-emerald-500/10 hover:border-emerald-600"
+                  ? "border-[#00A86B]/80 shadow-md ring-2 ring-emerald-500/10 hover:border-emerald-600"
                   : "border-slate-200/90 hover:border-sky-300 shadow-2xs hover:shadow-lg"
               }`}
             >
-              {/* Badge rendered in Top-Right Corner of the card */}
+              {/* Slanting Ribbon Badge in Top-Right Corner */}
               {course.badge && (
-                <div className="absolute -top-2.5 right-2 z-10">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#00A86B] text-white font-extrabold text-[9px] uppercase tracking-wider shadow-sm border border-emerald-300">
-                    <Sparkles className="w-2.5 h-2.5" />
+                <div className="absolute top-0 right-0 overflow-hidden w-28 h-28 pointer-events-none z-10">
+                  <div className="absolute transform rotate-45 bg-[#00A86B] text-white font-extrabold text-[8px] sm:text-[9px] uppercase tracking-wider text-center py-1 right-[-34px] top-[18px] w-[125px] shadow-sm border-b border-emerald-300">
                     {course.badge}
-                  </span>
+                  </div>
                 </div>
               )}
 
