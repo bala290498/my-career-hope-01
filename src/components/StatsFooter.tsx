@@ -22,10 +22,10 @@ export default function StatsFooter() {
             </p>
           </div>
 
-          {/* Right Stats Metrics Bar (2 cols on mobile, 4 cols on desktop, no divide lines) */}
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center sm:text-left">
+          {/* Right Stats Metrics Bar (4 equal columns, equal spacing, centered alignment) */}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center items-start">
             
-            <div>
+            <div className="flex flex-col items-center justify-center">
               <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight block">
                 500+
               </span>
@@ -34,7 +34,7 @@ export default function StatsFooter() {
               </span>
             </div>
 
-            <div>
+            <div className="flex flex-col items-center justify-center">
               <span className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight block">
                 200+
               </span>
@@ -43,7 +43,7 @@ export default function StatsFooter() {
               </span>
             </div>
 
-            <div>
+            <div className="flex flex-col items-center justify-center">
               <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight block">
                 50+
               </span>
@@ -52,7 +52,7 @@ export default function StatsFooter() {
               </span>
             </div>
 
-            <div>
+            <div className="flex flex-col items-center justify-center">
               <span className="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight block">
                 90%
               </span>
