@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { GraduationCap, Sparkles, RefreshCw, UserCheck, CheckCircle2, ArrowRight } from "lucide-react";
+import { GraduationCap, Rocket, RotateCcw, ArrowRightLeft } from "lucide-react";
 
 interface WhoCanAttendSectionProps {
   onOpenEligibility: () => void;
@@ -18,19 +18,19 @@ export default function WhoCanAttendSection({ onOpenEligibility }: WhoCanAttendS
     {
       title: "Freshers\nlooking for job",
       desc: "Bridge the gap between academic theory and industry-grade IT skills demanded by tech recruiters.",
-      icon: Sparkles,
+      icon: Rocket,
       color: "text-teal-600 bg-teal-100/70 border-teal-200",
     },
     {
       title: "Candidates with\na Career Gap",
       desc: "Restart your career confidently with guided live sessions, projects, and interview mentorship.",
-      icon: RefreshCw,
+      icon: RotateCcw,
       color: "text-indigo-600 bg-indigo-100/70 border-indigo-200",
     },
     {
       title: "Non-IT to IT\nCareer Switchers",
       desc: "Transition into high-demand IT roles step-by-step with zero prior coding prerequisites required.",
-      icon: UserCheck,
+      icon: ArrowRightLeft,
       color: "text-sky-600 bg-sky-100/70 border-sky-200",
     },
   ];
