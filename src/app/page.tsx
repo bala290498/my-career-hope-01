@@ -61,13 +61,13 @@ export default function Home() {
           onOpenEligibility={handleOpenAuth}
         />
 
-        {/* College Student Group Banner */}
-        <CollegeGroupBanner />
-
         {/* Dynamic Group Pricing Banner & How It Works */}
         <DynamicPricingSection
           onOpenAuth={handleOpenAuth}
         />
+
+        {/* College Student Group Banner (Next to How It Works) */}
+        <CollegeGroupBanner />
 
         {/* Why Learn With Us Section */}
         <WhyLearnWithUsSection />
