@@ -10,12 +10,12 @@ interface HeroProps {
 }
 
 export default function Hero({ onOpenVideo, onExplorePrograms }: HeroProps) {
-  const avatarList = [
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80",
+  const learnerInitials = [
+    { initials: "AK", name: "Ankit Kumar", bg: "bg-emerald-600" },
+    { initials: "RS", name: "Riya Sharma", bg: "bg-teal-600" },
+    { initials: "MP", name: "Manoj Patel", bg: "bg-sky-600" },
+    { initials: "VK", name: "Vikram K", bg: "bg-indigo-600" },
+    { initials: "SR", name: "Sneha Reddi", bg: "bg-purple-600" },
   ];
 
   return (
@@ -90,14 +90,15 @@ export default function Hero({ onOpenVideo, onExplorePrograms }: HeroProps) {
 
             {/* Social Proof */}
             <div className="flex items-center gap-4 pt-4 border-t border-slate-800/80">
-              <div className="flex -space-x-3 overflow-hidden">
-                {avatarList.map((src, i) => (
-                  <img
+              <div className="flex -space-x-2.5 overflow-hidden">
+                {learnerInitials.map((item, i) => (
+                  <div
                     key={i}
-                    src={src}
-                    alt={`Learner ${i + 1}`}
-                    className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 object-cover shadow-xs"
-                  />
+                    className={`inline-flex items-center justify-center h-10 w-10 rounded-full ring-2 ring-slate-950 ${item.bg} text-white font-extrabold text-xs shadow-md tracking-wider cursor-default`}
+                    title={item.name}
+                  >
+                    {item.initials}
+                  </div>
                 ))}
               </div>
               <div>

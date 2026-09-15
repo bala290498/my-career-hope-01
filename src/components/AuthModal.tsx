@@ -36,11 +36,11 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
     
     const textMessage = 
       `Hi MyCareerHope! I am interested in joining a batch.\n\n` +
-      `👤 *Name:* ${formData.name}\n` +
-      `📱 *Mobile/WhatsApp:* ${formData.phone}\n` +
-      `✉️ *Email:* ${formData.email}\n` +
-      `🎓 *Category:* ${formData.category}\n` +
-      `📚 *Course:* ${formData.course || "General Inquiry"}\n\n` +
+      `*Name:* ${formData.name}\n` +
+      `*Mobile/WhatsApp:* ${formData.phone}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Category:* ${formData.category}\n` +
+      `*Course:* ${formData.course || "General Inquiry"}\n\n` +
       `Please share batch timings, roadmap and dynamic group discount details!`;
 
     const url = `https://api.whatsapp.com/send?phone=${targetWhatsAppNumber}&text=${encodeURIComponent(textMessage)}`;

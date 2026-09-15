@@ -15,7 +15,7 @@ export default function StatsFooter() {
           <div className="lg:col-span-5 space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
               Built for Students<br />
-              Who Want Real Experiences
+              Who Want <span className="text-[#00A86B]">Real Experiences</span>
             </h2>
             <p className="text-sm text-slate-300 leading-relaxed font-normal">
               We connect students and job seekers with working professionals who host live sessions. You learn together, pay less together, and move toward real job opportunities.
