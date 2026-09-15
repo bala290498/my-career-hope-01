@@ -68,8 +68,8 @@ export default function EligibilityModal({ isOpen, onClose, onSelectCourse }: El
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {[
-                    "Final year IT student",
-                    "Fresh Graduate / Fresher",
+                    "College Students",
+                    "Freshers looking for job",
                     "Candidate with career gap",
                     "Non-IT to IT Switcher",
                   ].map((item) => (

@@ -15,7 +15,7 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
       id: "bootcamp",
       title: "BootCamp",
       category: "Career Program",
-      desc: "Best for college students and freshers",
+      desc: "Best for college students and freshers looking for job",
       level: "Basic to Advanced",
       badge: "Most Picked",
       imageSrc: "/courses/devops-logo-png_seeklogo-423085.png",

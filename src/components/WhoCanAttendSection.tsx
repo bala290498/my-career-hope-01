@@ -10,13 +10,13 @@ interface WhoCanAttendSectionProps {
 export default function WhoCanAttendSection({ onOpenEligibility }: WhoCanAttendSectionProps) {
   const audienceList = [
     {
-      title: "Final Year IT Students",
+      title: "College Students",
       desc: "Prepare for campus placements and gain hands-on live project experience before graduating.",
       icon: GraduationCap,
       color: "text-emerald-600 bg-emerald-100/70 border-emerald-200",
     },
     {
-      title: "Freshers",
+      title: "Freshers looking for job",
       desc: "Bridge the gap between academic theory and industry-grade IT skills demanded by tech recruiters.",
       icon: Sparkles,
       color: "text-teal-600 bg-teal-100/70 border-teal-200",

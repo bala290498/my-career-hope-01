@@ -17,7 +17,7 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
     name: "",
     phone: "",
     email: "",
-    category: "Final Year IT Student",
+    category: "College Students",
     course: "",
   });
 
@@ -52,8 +52,8 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
   };
 
   const categories = [
-    "Final Year IT Student",
-    "Fresher",
+    "College Students",
+    "Freshers looking for job",
     "Candidate with Career Gap",
     "Non-IT to IT Switcher",
   ];
