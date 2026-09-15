@@ -74,7 +74,6 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
             </div>
             <div>
               <h3 className="text-lg font-bold text-white leading-snug">MyCareerHope WhatsApp Support</h3>
-              <p className="text-xs text-emerald-200 font-medium">Direct Chat: +91 96776 91237</p>
             </div>
           </div>
           <button
@@ -156,12 +155,26 @@ export default function AuthModal({ isOpen, onClose, selectedCourse }: AuthModal
                   <input
                     type="tel"
                     required
-                    placeholder="+91 98765 43210"
+                    maxLength={10}
+                    minLength={10}
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit mobile number"
+                    placeholder="Enter 10-digit mobile number"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/\D/g, "");
+                      if (value.length <= 10) {
+                        setFormData({ ...formData, phone: value });
+                      }
+                    }}
                     className="w-full pl-10 pr-3 py-2.5 text-base sm:text-sm rounded-xl border border-slate-300 focus:outline-none focus:border-[#25D366] focus:ring-2 focus:ring-emerald-500/20"
                   />
                 </div>
+                {formData.phone && formData.phone.length < 10 && (
+                  <p className="text-[11px] text-amber-600 mt-1 font-medium">
+                    Please enter a valid 10-digit mobile number ({formData.phone.length}/10)
+                  </p>
+                )}
               </div>
 
               {/* Email ID */}

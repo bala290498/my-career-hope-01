@@ -18,7 +18,7 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
       desc: "Best for college students and freshers looking for job",
       level: "Basic to Advanced",
       badge: "Most Picked",
-      imageSrc: "/courses/devops-logo-png_seeklogo-423085.png",
+      initials: "BC",
     },
     {
       id: "first-career",
@@ -27,7 +27,7 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
       desc: "Best for Non-IT to IT & Career Gap",
       level: "Basic to Advanced",
       badge: "Popular Choice",
-      imageSrc: "/courses/linux-removebg-preview.png",
+      initials: "FC",
     },
     {
       id: "devops",
@@ -99,16 +99,22 @@ export default function CoursesSection({ onOpenEligibility, onSelectCourse }: Co
               )}
 
               <div>
-                {/* Course Image Container - Increased size */}
+                {/* Course Image or Initials Container */}
                 <div className="h-16 sm:h-20 w-full flex items-center justify-start mb-3 pt-1">
-                  <div className="relative h-14 sm:h-16 w-28 sm:w-36 flex items-center justify-start">
-                    <Image
-                      src={course.imageSrc}
-                      alt={`${course.title} logo`}
-                      fill
-                      className="object-contain object-left scale-105"
-                    />
-                  </div>
+                  {course.initials ? (
+                    <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-gradient-to-br from-[#0B192C] via-[#042f2c] to-[#075E54] text-white flex items-center justify-center font-black text-xl sm:text-2xl tracking-wider shadow-md border border-emerald-400/30 group-hover:scale-105 transition-transform">
+                      {course.initials}
+                    </div>
+                  ) : (
+                    <div className="relative h-14 sm:h-16 w-28 sm:w-36 flex items-center justify-start">
+                      <Image
+                        src={course.imageSrc!}
+                        alt={`${course.title} logo`}
+                        fill
+                        className="object-contain object-left scale-105"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Course Title */}
