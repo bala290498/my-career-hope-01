@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function StatsFooter() {
   return (
-    <footer className="bg-[#0B192C] text-white pt-16 pb-12 overflow-hidden border-t border-slate-800">
+    <footer id="contact" className="bg-[#0B192C] text-white pt-16 pb-12 overflow-hidden border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Section: Built For Students Banner + Stats Grid (Matching screenshot bottom bar) */}

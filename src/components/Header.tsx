@@ -18,7 +18,6 @@ export default function Header({ onOpenSearch, onOpenAuth }: HeaderProps) {
     { name: "Courses", href: "#courses" },
     { name: "How It Works", href: "#how-it-works" },
     { name: "Why Us", href: "#why-us" },
-    { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ];
 
