@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FeatureBar from "@/components/FeatureBar";
 import CoursesSection from "@/components/CoursesSection";
 import DynamicPricingSection from "@/components/DynamicPricingSection";
 import StatsFooter from "@/components/StatsFooter";
@@ -52,9 +51,6 @@ export default function Home() {
           onOpenVideo={() => setIsVideoModalOpen(true)}
           onExplorePrograms={handleExplorePrograms}
         />
-
-        {/* 6-Grid Key Highlights Feature Bar */}
-        <FeatureBar />
 
         {/* Our Courses & Who Can Attend */}
         <CoursesSection
