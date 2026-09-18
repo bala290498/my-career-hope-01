@@ -10,10 +10,10 @@ interface DynamicPricingSectionProps {
 export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSectionProps) {
   const [studentCount, setStudentCount] = useState(14);
 
-  // Dynamic price calculation formula based on batch cost (1 Lakh / min 3 to max 20 learners)
+  // Dynamic price calculation formula based on batch cost (1 Lakh / min 3 to max 30 learners)
   const batchTotalCost = 100000;
   const minLearners = 3;
-  const maxLearners = 20;
+  const maxLearners = 30;
 
   // Calculated price per learner for the batch
   const currentPrice = Math.round(batchTotalCost / studentCount);
@@ -48,7 +48,7 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
               </h2>
 
               <p className="text-slate-300 text-base lg:text-lg leading-relaxed font-normal max-w-xl">
-                India&apos;s first platform with Dynamic Group Pricing. More learners join, everyone pays less automatically. Group cap: 3 to 20 learners per batch.
+                India&apos;s first platform with Dynamic Group Pricing. More learners join, everyone pays less automatically. Group cap: 3 to 30 learners per batch.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -96,22 +96,22 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                   </span>
                 </div>
 
-                {/* Interactive 3 to 20 Point Indicators Slider Container with Track Fill */}
+                {/* Interactive 3 to 30 Point Indicators Slider Container with Track Fill */}
                 <div className="space-y-1.5 pt-2">
                   
-                  {/* Top Indicators Row: Odd Numbers (3, 5, 7, 9, 11, 13, 15, 17, 19) */}
+                  {/* Top Indicators Row: Odd Numbers (3, 5, 7, ..., 29) */}
                   <div className="flex items-center justify-between px-1">
                     {learnerNumbers.map((num) => {
                       const isOdd = num % 2 !== 0;
                       const isActive = studentCount === num;
                       const isReached = num <= studentCount;
                       return (
-                        <div key={`odd-${num}`} className="w-5 flex justify-center">
+                        <div key={`odd-${num}`} className="flex-1 flex justify-center min-w-0">
                           {isOdd ? (
                             <button
                               type="button"
                               onClick={() => setStudentCount(num)}
-                              className={`text-[10px] font-extrabold transition-all px-1 py-0.5 rounded-md ${
+                              className={`text-[9px] sm:text-[10px] font-extrabold transition-all px-0.5 sm:px-1 py-0.5 rounded-md ${
                                 isActive
                                   ? "bg-[#00A86B] text-white scale-125 shadow-md z-10 ring-2 ring-emerald-300"
                                   : isReached
@@ -145,19 +145,19 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                     />
                   </div>
 
-                  {/* Bottom Indicators Row: Even Numbers (4, 6, 8, 10, 12, 14, 16, 18, 20) */}
+                  {/* Bottom Indicators Row: Even Numbers (4, 6, 8, ..., 30) */}
                   <div className="flex items-center justify-between px-1">
                     {learnerNumbers.map((num) => {
                       const isEven = num % 2 === 0;
                       const isActive = studentCount === num;
                       const isReached = num <= studentCount;
                       return (
-                        <div key={`even-${num}`} className="w-5 flex justify-center">
+                        <div key={`even-${num}`} className="flex-1 flex justify-center min-w-0">
                           {isEven ? (
                             <button
                               type="button"
                               onClick={() => setStudentCount(num)}
-                              className={`text-[10px] font-extrabold transition-all px-1 py-0.5 rounded-md ${
+                              className={`text-[9px] sm:text-[10px] font-extrabold transition-all px-0.5 sm:px-1 py-0.5 rounded-md ${
                                 isActive
                                   ? "bg-[#00A86B] text-white scale-125 shadow-md z-10 ring-2 ring-emerald-300"
                                   : isReached
@@ -234,10 +234,10 @@ export default function DynamicPricingSection({ onOpenAuth }: DynamicPricingSect
                 </div>
               </div>
               <h4 className="text-lg font-bold text-slate-900">
-                Group Grows (Max 20)
+                Group Grows (Max 30)
               </h4>
               <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                As more learners join your batch, the total fee is distributed across the group up to 20 learners.
+                As more learners join your batch, the total fee is distributed across the group up to 30 learners.
               </p>
             </div>
 
