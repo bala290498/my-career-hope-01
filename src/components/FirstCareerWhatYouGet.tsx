@@ -15,85 +15,99 @@ export default function FirstCareerWhatYouGet() {
   const features = [
     {
       title: "Real Project Experience",
+      desc: "Work on production-level codebases, build end-to-end features, and experience real software development lifecycles.",
       icon: FileText,
-      cardBg: "bg-blue-50/70 border-blue-100/90 hover:border-blue-200",
-      iconBg: "bg-blue-100 text-blue-600",
+      iconColor: "text-blue-600 bg-blue-100/80 border-blue-200",
+      accentBorder: "hover:border-blue-300",
     },
     {
       title: "Client & Business Project Exposure",
+      desc: "Gain exposure to actual client requirements, business domain logic, and tight deliverables.",
       icon: Handshake,
-      cardBg: "bg-emerald-50/70 border-emerald-100/90 hover:border-emerald-200",
-      iconBg: "bg-emerald-100 text-emerald-600",
+      iconColor: "text-emerald-600 bg-emerald-100/80 border-emerald-200",
+      accentBorder: "hover:border-emerald-300",
     },
     {
       title: "Professional Workflows & Team Collaboration",
       icon: Users,
-      cardBg: "bg-purple-50/70 border-purple-100/90 hover:border-purple-200",
-      iconBg: "bg-purple-100 text-purple-600",
+      desc: "Collaborate using Git, branch strategies, pull requests, code reviews, and Agile daily standups.",
+      iconColor: "text-purple-600 bg-purple-100/80 border-purple-200",
+      accentBorder: "hover:border-purple-300",
     },
     {
       title: "Practical Workplace Responsibilities",
+      desc: "Take direct ownership of module tasks, debugging, system maintenance, and feature rollouts.",
       icon: Settings,
-      cardBg: "bg-amber-50/70 border-amber-100/90 hover:border-amber-200",
-      iconBg: "bg-amber-100 text-amber-600",
+      iconColor: "text-amber-600 bg-amber-100/80 border-amber-200",
+      accentBorder: "hover:border-amber-300",
     },
     {
       title: "Real-Time Attendance Records",
       icon: CalendarCheck,
-      cardBg: "bg-rose-50/70 border-rose-100/90 hover:border-rose-200",
-      iconBg: "bg-rose-100 text-rose-600",
+      desc: "Transparent log of your daily attendance, sprint participation, and active work hours.",
+      iconColor: "text-rose-600 bg-rose-100/80 border-rose-200",
+      accentBorder: "hover:border-rose-300",
     },
     {
       title: "Relieving-cum-Experience Letter",
+      desc: "Receive official, verifiable experience letters detailing your role, tenure, and tech stack skills.",
       icon: Award,
-      cardBg: "bg-teal-50/70 border-teal-100/90 hover:border-teal-200",
-      iconBg: "bg-teal-100 text-teal-600",
+      iconColor: "text-teal-600 bg-teal-100/80 border-teal-200",
+      accentBorder: "hover:border-teal-300",
     },
     {
       title: "Structured 6\u201312 Month Work Experience",
+      desc: "Build a solid, uninterrupted history of practical work experience to boost your career prospects.",
       icon: TrendingUp,
-      cardBg: "bg-sky-50/70 border-sky-100/90 hover:border-sky-200",
-      iconBg: "bg-sky-100 text-sky-600",
+      iconColor: "text-sky-600 bg-sky-100/80 border-sky-200",
+      accentBorder: "hover:border-sky-300",
     },
   ];
 
   return (
-    <section id="first-career-what-you-get" className="scroll-mt-24 py-16 bg-white border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <section id="first-career-what-you-get" className="scroll-mt-24 py-16 bg-slate-50/70 border-b border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
-        {/* Header Block */}
-        <div className="text-left space-y-2">
+        {/* Section Header */}
+        <div className="text-left space-y-3 max-w-3xl">
           <span className="text-xs font-extrabold uppercase tracking-widest text-slate-500">
             FIRST CAREER PROGRAM
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B192C] tracking-tight">
-            What You <span className="text-[#0052FF]">Get</span>
+            What You Get
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-3xl">
+          <p className="text-base text-slate-600 font-normal leading-relaxed">
             Gain real work experience, build industry-ready skills, and take the next step in your career.
           </p>
         </div>
 
-        {/* 7 Colorful Feature Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3.5 sm:gap-4">
+        {/* Rich Feature Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((item, idx) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={idx}
-                className={`${item.cardBg} rounded-2xl p-4 sm:p-5 border shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center justify-start group hover:-translate-y-1 min-h-[190px] sm:min-h-[210px]`}
+                className={`bg-white rounded-2xl p-6 border border-slate-200/90 ${item.accentBorder} shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 relative overflow-hidden`}
               >
-                {/* Circle Icon Badge */}
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full ${item.iconBg} flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform shadow-xs`}>
-                  <IconComponent className="w-6 h-6 sm:w-7 sm:h-7" />
-                </div>
+                <div>
+                  {/* Icon Box */}
+                  <div className={`w-14 h-14 rounded-2xl ${item.iconColor} border flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-xs`}>
+                    <IconComponent className="w-7 h-7" />
+                  </div>
 
-                {/* Card Title */}
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug tracking-tight">
-                  {item.title}
-                </h3>
+                  {/* Card Title */}
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">
+                    {item.title}
+                  </h3>
+
+                  {/* Card Description */}
+                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             );
           })}
