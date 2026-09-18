@@ -7,6 +7,7 @@ import CoursesSection from "@/components/CoursesSection";
 import WhoCanAttendSection from "@/components/WhoCanAttendSection";
 import CollegeGroupBanner from "@/components/CollegeGroupBanner";
 import FirstCareerBanner from "@/components/FirstCareerBanner";
+import FirstCareerWhatYouGet from "@/components/FirstCareerWhatYouGet";
 import DynamicPricingSection from "@/components/DynamicPricingSection";
 import WhyLearnWithUsSection from "@/components/WhyLearnWithUsSection";
 import StatsFooter from "@/components/StatsFooter";
@@ -73,10 +74,13 @@ export default function Home() {
         {/* Why Learn With Us Section */}
         <WhyLearnWithUsSection />
 
-        {/* Full-Width First Career Program Banner (Next to Why Learn With Us) */}
+        {/* Full-Width First Career Program Banner */}
         <FirstCareerBanner
           onApply={() => handleSelectCourse("First Career")}
         />
+
+        {/* Dedicated First Career Program - What You Get Section */}
+        <FirstCareerWhatYouGet />
       </main>
 
       {/* Navy Statistics Bar & Footer */}
